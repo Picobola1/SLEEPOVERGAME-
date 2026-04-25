@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://cqniesylsq3jc"]
 
 [ext_resource type="PackedScene" uid="uid://clopiuj6ng815" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://cqt4k6rbj7p51" path="res://alien.tscn" id="2_e2o6t"]
 
 [node name="Game" type="Node2D" unique_id=2022856995]
 
 [node name="Player" parent="." unique_id=2028996552 instance=ExtResource("1_80nbo")]
 position = Vector2(320, 462)
+
+[node name="Alien" parent="." unique_id=1936574126 instance=ExtResource("2_e2o6t")]
+position = Vector2(640, 108)
+rotation = 3.1415927
+
+[node name="Alien2" parent="." unique_id=1492329621 instance=ExtResource("2_e2o6t")]
+position = Vector2(243, 140)
+rotation = 3.1415927

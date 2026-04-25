@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cqt4k6rbj7p51"]
+
+[ext_resource type="Script" uid="uid://bxkjp1l8t2sam" path="res://alien.gd" id="1_0cgv7"]
+[ext_resource type="Texture2D" uid="uid://tnoe60h5amyw" path="res://Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Very damaged.png" id="1_816kv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0cgv7"]
+radius = 18.0
+height = 58.0
+
+[node name="Alien" type="CharacterBody2D" unique_id=1936574126]
+script = ExtResource("1_0cgv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=94841307]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_816kv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=962148259]
+shape = SubResource("CapsuleShape2D_0cgv7")
