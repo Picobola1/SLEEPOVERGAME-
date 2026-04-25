@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dv64h45cxbwd1" path="res://player.gd" id="1_onrkg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4flbx"]
-radius = 29.0
+radius = 27.0
 height = 80.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2028996552]
