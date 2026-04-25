@@ -19,10 +19,6 @@ func _physics_process(delta: float) -> void:
 		await  get_tree().create_timer(0.1).timeout
 		fire()
 		
-		print("shot")
-		
-		
-	
 func fire():
 	var bullet = preload("res://bullet.tscn")
 	var firedBullet = bullet.instantiate()
