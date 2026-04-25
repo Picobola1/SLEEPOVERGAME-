@@ -16,8 +16,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("shoot"):
+		await  get_tree().create_timer(0.1).timeout
 		fire()
+		
 		print("shot")
+		
+		
 	
 func fire():
 	var bullet = preload("res://bullet.tscn")
