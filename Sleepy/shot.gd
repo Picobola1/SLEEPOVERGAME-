@@ -9,6 +9,7 @@ func _process(delta: float) -> void:
 	var collision = move_and_collide(Vector2.UP * delta * speed)
 	if collision and collision.get_collider().has_method("kill"):
 		collision.get_collider().kill()
+		queue_free()
 			
 	life_spawn += delta
 	if life_spawn >= life_time:
