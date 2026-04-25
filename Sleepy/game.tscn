@@ -4,7 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cqt4k6rbj7p51" path="res://alien.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://b5tnpl0r4bq1n" path="res://block.tscn" id="3_feb5d"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
+size = Vector2(38, 678)
+
 [node name="Game" type="Node2D" unique_id=2022856995]
+metadata/_edit_vertical_guides_ = [41.0]
 
 [node name="Player" parent="." unique_id=2028996552 instance=ExtResource("1_80nbo")]
 position = Vector2(308, 569)
@@ -144,3 +148,18 @@ scale = Vector2(2, 2)
 [node name="Block4" parent="." unique_id=1776755916 instance=ExtResource("3_feb5d")]
 position = Vector2(967, 448)
 scale = Vector2(2, 2)
+
+[node name="LeftB" type="Area2D" parent="." unique_id=646565709]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftB" unique_id=1113667002]
+position = Vector2(-36, 331)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="RightB" type="Area2D" parent="." unique_id=1880052912]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightB" unique_id=2104549879]
+position = Vector2(1160, 329)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[connection signal="body_entered" from="LeftB" to="Alien" method="_on_left_b_body_entered"]
+[connection signal="body_entered" from="RightB" to="Alien" method="_on_right_b_body_entered"]

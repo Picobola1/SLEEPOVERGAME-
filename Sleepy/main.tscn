@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cffsssfbslihl"]
 
+[ext_resource type="Script" uid="uid://b7fve8smgaek" path="res://button.gd" id="1_ig7tw"]
+
 [node name="Control" type="Control" unique_id=2054382122]
 layout_mode = 3
 anchors_preset = 8
@@ -31,3 +33,6 @@ offset_right = 41.0
 offset_bottom = 179.0
 text = "Start
 "
+script = ExtResource("1_ig7tw")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

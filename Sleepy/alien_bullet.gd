@@ -21,4 +21,14 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Shot":
 		queue_free()
 	if body.name == "Block":
+		print("hi")
+		queue_free()
+	if body.name == "Block2":
+		print("hi1")
+		queue_free()
+	if body.name == "Block3":
+		print("hi3")
+		queue_free()
+	if body.name == "Block4":
+		print("h4i")
 		queue_free()
