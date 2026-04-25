@@ -1,0 +1,184 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqniesylsq3jc"]
+
+[ext_resource type="Texture2D" uid="uid://c7m56npbqoeiw" path="res://assets/back.jpg.webp" id="1_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://clopiuj6ng815" path="res://scenes/player.tscn" id="2_iywne"]
+[ext_resource type="PackedScene" uid="uid://cqt4k6rbj7p51" path="res://scenes/alien.tscn" id="3_p57ef"]
+[ext_resource type="PackedScene" uid="uid://b5tnpl0r4bq1n" path="res://scenes/block.tscn" id="4_u5sy4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jktm"]
+texture = ExtResource("1_lbhrr")
+modulate_color = Color(0.264753, 0.264753, 0.264753, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
+normal = Vector2(0.00165487, -0.999999)
+distance = 361.329
+
+[node name="Game" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1155.0
+offset_bottom = 646.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7jktm")
+
+[node name="Player" parent="." instance=ExtResource("2_iywne")]
+position = Vector2(571, 569)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 571.0
+offset_top = 569.0
+offset_right = 611.0
+offset_bottom = 609.0
+
+[node name="Alien" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-87, -537)
+rotation = 3.14159
+
+[node name="Alien2" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-343, -538)
+rotation = 3.14159
+
+[node name="Alien3" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(39, -537)
+rotation = 3.14159
+
+[node name="Alien4" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-216, -537)
+rotation = 3.14159
+
+[node name="Alien5" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-409, -475)
+rotation = 3.14159
+
+[node name="Alien6" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-473, -532)
+rotation = 3.14159
+
+[node name="Alien7" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(164, -534)
+rotation = 3.14159
+
+[node name="Alien8" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(294, -533)
+rotation = 3.14159
+
+[node name="Alien9" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(357, -474)
+rotation = 3.14159
+
+[node name="Alien10" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(547, -535)
+rotation = 3.14159
+
+[node name="Alien11" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-154, -472)
+rotation = 3.14159
+
+[node name="Alien12" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-286, -475)
+rotation = 3.14159
+
+[node name="Alien13" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-28, -470)
+rotation = 3.14159
+
+[node name="Alien14" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(420, -410)
+rotation = 3.14159
+
+[node name="Alien15" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(295, -409)
+rotation = 3.14159
+
+[node name="Alien16" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-536, -472)
+rotation = 3.14159
+
+[node name="Alien17" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(165, -411)
+rotation = 3.14159
+
+[node name="Alien18" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(227, -471)
+rotation = 3.14159
+
+[node name="Alien19" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(425, -536)
+rotation = 3.14159
+
+[node name="Alien20" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(485, -475)
+rotation = 3.14159
+
+[node name="Alien21" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-91, -408)
+rotation = 3.14159
+
+[node name="Alien22" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-347, -410)
+rotation = 3.14159
+
+[node name="Alien23" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(36, -408)
+rotation = 3.14159
+
+[node name="Alien24" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-218, -409)
+rotation = 3.14159
+
+[node name="Alien25" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(551, -409)
+rotation = 3.14159
+
+[node name="Alien26" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-467, -412)
+rotation = 3.14159
+
+[node name="Alien27" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(103, -473)
+rotation = 3.14159
+
+[node name="Blocks" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Block" parent="Blocks" instance=ExtResource("4_u5sy4")]
+position = Vector2(192, 448)
+scale = Vector2(2, 2)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("4_u5sy4")]
+position = Vector2(448, 450)
+scale = Vector2(2, 2)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("4_u5sy4")]
+position = Vector2(704, 448)
+scale = Vector2(2, 2)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("4_u5sy4")]
+position = Vector2(961, 448)
+scale = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(349, 302)
+rotation = -1.5858
+scale = Vector2(16.1706, 0.980737)
+shape = SubResource("WorldBoundaryShape2D_lbhrr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+physics_interpolation_mode = 1
+position = Vector2(751, 346)
+rotation = 1.58147
+scale = Vector2(-15.0509, 1.13507)
+shape = SubResource("WorldBoundaryShape2D_lbhrr")
