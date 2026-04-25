@@ -15,5 +15,6 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=963394419]
+z_index = -1
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_4flbx")

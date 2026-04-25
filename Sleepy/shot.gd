@@ -1,0 +1,14 @@
+extends CharacterBody2D
+
+var life_time=3
+var life_spawn=0
+var speed = 100
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	var collision = move_and_collide(Vector2.UP * delta * speed)
+	
+	life_spawn += delta
+	if life_spawn >= life_time:
+		queue_free()
+		print("bullet deleted")
