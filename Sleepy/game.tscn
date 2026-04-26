@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cqniesylsq3jc"]
 
-[ext_resource type="PackedScene" uid="uid://clopiuj6ng815" path="res://player.tscn" id="1_80nbo"]
-[ext_resource type="PackedScene" uid="uid://cqt4k6rbj7p51" path="res://alien.tscn" id="2_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://b5tnpl0r4bq1n" path="res://block.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://clopiuj6ng815" path="res://scenes/player.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://cqt4k6rbj7p51" path="res://scenes/alien.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://b5tnpl0r4bq1n" path="res://scenes/block.tscn" id="3_feb5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
 size = Vector2(38, 678)

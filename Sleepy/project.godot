@@ -15,14 +15,12 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Sleepy"
-run/main_scene="uid://cffsssfbslihl"
+run/main_scene="uid://bo1c736xjuqm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=1280
 window/handheld/orientation=1
 
 [input]

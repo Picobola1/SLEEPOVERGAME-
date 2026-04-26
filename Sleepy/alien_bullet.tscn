@@ -1,7 +1,43 @@
 [gd_scene format=3 uid="uid://btyl8x3setk0q"]
 
-[ext_resource type="Texture2D" uid="uid://c17aukcv0n76l" path="res://Foozle_2DS0011_Void_MainShip/Main ship weapons/PNGs/Main ship weapon - Projectile - Zapper.png" id="1_6y17x"]
-[ext_resource type="Script" uid="uid://o3k0ob25e101" path="res://alien_bullet.gd" id="1_ttxep"]
+[ext_resource type="Texture2D" path="res://Foozle_2DS0011_Void_MainShip/Main ship weapons/PNGs/Main ship weapon - Projectile - Zapper.png" id="1_6y17x"]
+
+[sub_resource type="GDScript" id="GDScript_6y17x"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	position.y += 2
+
+
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == \"Player\":
+		get_tree().reload_current_scene()
+		print(\"hit player\")
+	if body.name == \"Shot\":
+		queue_free()
+	if body.name == \"Block\":
+		print(\"hi\")
+		queue_free()
+	if body.name == \"Block2\":
+		print(\"hi1\")
+		queue_free()
+	if body.name == \"Block3\":
+		print(\"hi3\")
+		queue_free()
+	if body.name == \"Block4\":
+		print(\"h4i\")
+		queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6y17x"]
 size = Vector2(6, 32)
@@ -71,7 +107,7 @@ animations = [{
 }]
 
 [node name="alienBullet" type="Area2D" unique_id=492216804]
-script = ExtResource("1_ttxep")
+script = SubResource("GDScript_6y17x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=241684191]
 z_index = 1

@@ -3,7 +3,7 @@ from pynput.keyboard import Controller, Key
 
 keyboard = Controller()
 
-arduino = serial.Serial("/dev/cu.usbmodem14201", 9600)
+arduino = serial.Serial("/dev/cu.usbmodem14101", 9600)
 
 while True:
     line = arduino.readline().decode().strip()
@@ -19,7 +19,6 @@ while True:
         keyboard.press("d")
         keyboard.release("d")
          
-  
-
+                
 
                  

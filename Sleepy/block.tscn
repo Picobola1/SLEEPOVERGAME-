@@ -1,6 +1,25 @@
 [gd_scene format=3 uid="uid://b5tnpl0r4bq1n"]
 
-[ext_resource type="Script" uid="uid://cn3k3wpvolyjp" path="res://block.gd" id="1_im0tn"]
+[sub_resource type="GDScript" id="GDScript_qncar"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+
+
+
+func _on_area_entered(area: Area2D) -> void:
+	area.queue_free()
+"
 
 [sub_resource type="Gradient" id="Gradient_qncar"]
 colors = PackedColorArray(0, 0.74943376, 0, 1, 0, 0.7490196, 0, 1)
@@ -13,7 +32,7 @@ width = 257
 size = Vector2(62, 25)
 
 [node name="Block" type="Area2D" unique_id=1020225110]
-script = ExtResource("1_im0tn")
+script = SubResource("GDScript_qncar")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1135612158]
 scale = Vector2(0.24000138, 25.92)
