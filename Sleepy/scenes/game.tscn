@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqniesylsq3jc"]
+[gd_scene load_steps=7 format=3 uid="uid://cqniesylsq3jc"]
 
 [ext_resource type="Texture2D" uid="uid://c7m56npbqoeiw" path="res://assets/back.jpg.webp" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://clopiuj6ng815" path="res://scenes/player.tscn" id="2_iywne"]
-[ext_resource type="Script" uid="uid://dedf3ycsyqe4f" path="res://scripts/player.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://cqt4k6rbj7p51" path="res://scenes/alien.tscn" id="3_p57ef"]
 [ext_resource type="PackedScene" uid="uid://b5tnpl0r4bq1n" path="res://scenes/block.tscn" id="4_lbhrr"]
 
@@ -30,7 +29,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_7jktm")
 
 [node name="Player" parent="." instance=ExtResource("2_iywne")]
 position = Vector2(571, 569)
-script = ExtResource("3_iywne")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
