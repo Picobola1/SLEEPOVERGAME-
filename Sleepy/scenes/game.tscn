@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqniesylsq3jc"]
+[gd_scene load_steps=8 format=3 uid="uid://cqniesylsq3jc"]
 
 [ext_resource type="Texture2D" uid="uid://c7m56npbqoeiw" path="res://assets/back.jpg.webp" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://clopiuj6ng815" path="res://scenes/player.tscn" id="2_iywne"]
+[ext_resource type="Script" uid="uid://dedf3ycsyqe4f" path="res://scripts/player.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://cqt4k6rbj7p51" path="res://scenes/alien.tscn" id="3_p57ef"]
-[ext_resource type="PackedScene" uid="uid://b5tnpl0r4bq1n" path="res://scenes/block.tscn" id="4_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://b5tnpl0r4bq1n" path="res://scenes/block.tscn" id="4_lbhrr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jktm"]
 texture = ExtResource("1_lbhrr")
@@ -29,6 +30,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_7jktm")
 
 [node name="Player" parent="." instance=ExtResource("2_iywne")]
 position = Vector2(571, 569)
+script = ExtResource("3_iywne")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -152,21 +154,21 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Block" parent="Blocks" instance=ExtResource("4_u5sy4")]
-position = Vector2(192, 448)
-scale = Vector2(2, 2)
+[node name="Block" parent="Blocks" instance=ExtResource("4_lbhrr")]
+position = Vector2(994, 466)
+scale = Vector2(2.52454, -0.778794)
 
-[node name="Block2" parent="Blocks" instance=ExtResource("4_u5sy4")]
-position = Vector2(448, 450)
-scale = Vector2(2, 2)
+[node name="Block2" parent="Blocks" instance=ExtResource("4_lbhrr")]
+position = Vector2(413, 467)
+scale = Vector2(2.52454, -0.778794)
 
-[node name="Block3" parent="Blocks" instance=ExtResource("4_u5sy4")]
-position = Vector2(704, 448)
-scale = Vector2(2, 2)
+[node name="Block3" parent="Blocks" instance=ExtResource("4_lbhrr")]
+position = Vector2(739, 466)
+scale = Vector2(2.52454, -0.778794)
 
-[node name="Block4" parent="Blocks" instance=ExtResource("4_u5sy4")]
-position = Vector2(961, 448)
-scale = Vector2(2, 2)
+[node name="Block4" parent="Blocks" instance=ExtResource("4_lbhrr")]
+position = Vector2(147, 466)
+scale = Vector2(2.52454, -0.778794)
 
 [node name="Area2D" type="Area2D" parent="."]
 

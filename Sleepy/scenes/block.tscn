@@ -1,9 +1,7 @@
-[gd_scene load_steps=0 format=3 uid="uid://b5tnpl0r4bq1n"]
-
-[ext_resource type="Script" uid="uid://cn3k3wpvolyjp" path="res://scripts/block.gd" id="1_im0tn"]
+[gd_scene load_steps=4 format=3 uid="uid://b5tnpl0r4bq1n"]
 
 [sub_resource type="Gradient" id="Gradient_qncar"]
-colors = PackedColorArray(0, 0.74943376, 0, 1, 0, 0.7490196, 0, 1)
+colors = PackedColorArray(0, 0.749434, 0, 1, 0, 0.74902, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_im0tn"]
 gradient = SubResource("Gradient_qncar")
@@ -12,13 +10,12 @@ width = 257
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qncar"]
 size = Vector2(62, 25)
 
-[node name="Block" type="Area2D" unique_id=1020225110]
-script = ExtResource("1_im0tn")
+[node name="Block" type="Area2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1135612158]
-scale = Vector2(0.24000138, 25.92)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.240001, 25.92)
 texture = SubResource("GradientTexture1D_im0tn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=622198723]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_qncar")

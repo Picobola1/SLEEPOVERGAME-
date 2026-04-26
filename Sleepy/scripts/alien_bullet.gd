@@ -17,5 +17,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 	if body.name == "Shot":
 		queue_free()
+		
 	if body.name == "Block":
 		queue_free()

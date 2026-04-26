@@ -9,9 +9,10 @@ func _process(delta: float) -> void:
 	var collision = move_and_collide(Vector2.UP * delta * speed)
 	if collision and collision.get_collider().has_method("kill"):
 		collision.get_collider().kill()
+		Score.score += 10
 		queue_free()
+		print(Score.score)
 			
 	life_spawn += delta
 	if life_spawn >= life_time:
 		queue_free()
-		print("bullet deleted")
