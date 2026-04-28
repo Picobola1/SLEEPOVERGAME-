@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://btyl8x3setk0q"]
+[gd_scene load_steps=13 format=3 uid="uid://btyl8x3setk0q"]
 
 [ext_resource type="Texture2D" uid="uid://c17aukcv0n76l" path="res://assets/Foozle_2DS0011_Void_MainShip/Main ship weapons/PNGs/Main ship weapon - Projectile - Zapper.png" id="1_6y17x"]
 [ext_resource type="Script" uid="uid://o3k0ob25e101" path="res://scripts/alien_bullet.gd" id="1_ttxep"]
@@ -70,17 +70,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="alienBullet" type="Area2D" unique_id=492216804]
+[node name="alienBullet" type="Area2D"]
 script = ExtResource("1_ttxep")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=241684191]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 shape = SubResource("RectangleShape2D_6y17x")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1198757139]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kwvoy")
 autoplay = "default"
 frame = 7
-frame_progress = 0.02778305
+frame_progress = 0.027783
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

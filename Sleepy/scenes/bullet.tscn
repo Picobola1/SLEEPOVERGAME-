@@ -1,7 +1,8 @@
-[gd_scene load_steps=0 format=3 uid="uid://6nqjh8htk0dt"]
+[gd_scene load_steps=9 format=3 uid="uid://6nqjh8htk0dt"]
 
 [ext_resource type="Texture2D" uid="uid://2185g8gcjgse" path="res://assets/Foozle_2DS0011_Void_MainShip/Main ship weapons/PNGs/Main ship weapon - Projectile - Rocket.png" id="1_v7oki"]
 [ext_resource type="Script" uid="uid://biewbxvxo3fl1" path="res://scripts/shot.gd" id="1_v8qja"]
+[ext_resource type="AudioStream" uid="uid://co2a0rueve6rc" path="res://assets/sounds/67.wav" id="3_l5glv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v8qja"]
 atlas = ExtResource("1_v7oki")
@@ -40,7 +41,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7oki"]
 size = Vector2(5, 12)
 
-[node name="Shot" type="CharacterBody2D" unique_id=1759052435]
+[node name="Shot" type="CharacterBody2D"]
 top_level = true
 light_mask = 3
 visibility_layer = 3
@@ -48,13 +49,18 @@ z_index = 2
 scale = Vector2(5, 5)
 script = ExtResource("1_v8qja")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=744789278]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b7duk")
 autoplay = "default"
-frame_progress = 0.08384353
+frame_progress = 0.0838435
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304485826]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -3)
 shape = SubResource("RectangleShape2D_v7oki")
 
-[node name="Bullet" type="Node2D" parent="." unique_id=1860333605]
+[node name="Bullet" type="Node2D" parent="."]
+
+[node name="67" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 1)
+stream = ExtResource("3_l5glv")
+volume_db = 5.0

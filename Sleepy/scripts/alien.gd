@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var move_Speed = 25
+var move_Speed = 15
 var shootingCount = randi_range(0,50)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,3 +21,22 @@ func _process(delta: float) -> void:
 
 func kill():
 	queue_free()
+	
+	
+
+
+func _on_area_2d_body_entered(body):
+	if body.name == "Shot":
+		print("1")
+		body.queue_free()
+	if body.name == "Bullet":
+		print("2")
+		body.queue_free()
+	if body.name == "shot":
+		print("3")
+		body.queue_free()
+	if body.name == "bullet":
+		body.queue_free()
+		print("4")
+	
+	

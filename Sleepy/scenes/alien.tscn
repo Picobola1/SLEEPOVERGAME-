@@ -1,18 +1,50 @@
-[gd_scene load_steps=0 format=3 uid="uid://cqt4k6rbj7p51"]
+[gd_scene load_steps=7 format=3 uid="uid://cqt4k6rbj7p51"]
 
 [ext_resource type="Script" uid="uid://bxkjp1l8t2sam" path="res://scripts/alien.gd" id="1_0cgv7"]
-[ext_resource type="Texture2D" uid="uid://tnoe60h5amyw" path="res://assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Very damaged.png" id="1_816kv"]
+[ext_resource type="Texture2D" uid="uid://byp0657ko86mo" path="res://assets/67.png" id="3_3vbw7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0cgv7"]
-radius = 18.0
-height = 58.0
+radius = 33.0
+height = 74.0
 
-[node name="Alien" type="CharacterBody2D" unique_id=1936574126]
+[sub_resource type="AtlasTexture" id="AtlasTexture_np108"]
+atlas = ExtResource("3_3vbw7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxp04"]
+atlas = ExtResource("3_3vbw7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kufd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np108")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxp04")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Alien" type="CharacterBody2D" groups=["alien"]]
 script = ExtResource("1_0cgv7")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=94841307]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("1_816kv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=962148259]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -5)
 shape = SubResource("CapsuleShape2D_0cgv7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_kufd8")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -5)
+shape = SubResource("CapsuleShape2D_0cgv7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

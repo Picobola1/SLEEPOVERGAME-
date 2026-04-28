@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var life_time=3
+var life_time=2
 var life_spawn=0
 var speed = 300
 
@@ -10,9 +10,11 @@ func _process(delta: float) -> void:
 	if collision and collision.get_collider().has_method("kill"):
 		collision.get_collider().kill()
 		Score.score += 10
+
 		queue_free()
-		print(Score.score)
-			
+		self.queue_free()
+		print("hi")
+
 	life_spawn += delta
 	if life_spawn >= life_time:
 		queue_free()

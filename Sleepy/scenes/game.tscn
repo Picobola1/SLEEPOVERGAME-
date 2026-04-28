@@ -1,19 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqniesylsq3jc"]
+[gd_scene load_steps=11 format=3 uid="uid://cqniesylsq3jc"]
 
 [ext_resource type="Texture2D" uid="uid://c7m56npbqoeiw" path="res://assets/back.jpg.webp" id="1_lbhrr"]
+[ext_resource type="Script" uid="uid://baow6k4voqco2" path="res://scenes/game.gd" id="1_p57ef"]
 [ext_resource type="PackedScene" uid="uid://clopiuj6ng815" path="res://scenes/player.tscn" id="2_iywne"]
+[ext_resource type="FontFile" uid="uid://dvo017vmaxa1e" path="res://assets/Silkscreen/Silkscreen-Regular.ttf" id="2_p57ef"]
 [ext_resource type="PackedScene" uid="uid://cqt4k6rbj7p51" path="res://scenes/alien.tscn" id="3_p57ef"]
 [ext_resource type="PackedScene" uid="uid://b5tnpl0r4bq1n" path="res://scenes/block.tscn" id="4_lbhrr"]
+[ext_resource type="AudioStream" uid="uid://ca650y71cnwn4" path="res://assets/sounds/Test_Project_2.wav" id="7_u5sy4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jktm"]
 texture = ExtResource("1_lbhrr")
 modulate_color = Color(0.264753, 0.264753, 0.264753, 1)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
-normal = Vector2(0.00165487, -0.999999)
-distance = 361.329
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
+size = Vector2(49.2863, 47.4398)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
+size = Vector2(1162, 20)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_p57ef")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
@@ -27,6 +33,44 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_7jktm")
 
+[node name="highscore" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = 245.5
+offset_right = 965.0
+offset_bottom = 438.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 16
+theme_override_fonts/font = ExtResource("2_p57ef")
+theme_override_font_sizes/font_size = 50
+text = "High score: "
+
+[node name="yourscore" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = 245.5
+offset_right = 417.0
+offset_bottom = 438.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 16
+theme_override_fonts/font = ExtResource("2_p57ef")
+theme_override_font_sizes/font_size = 50
+text = "Your Score: "
+
 [node name="Player" parent="." instance=ExtResource("2_iywne")]
 position = Vector2(571, 569)
 
@@ -39,112 +83,116 @@ offset_right = 611.0
 offset_bottom = 609.0
 
 [node name="Alien" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-87, -537)
-rotation = 3.14159
+position = Vector2(-94, -538)
 
 [node name="Alien2" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-343, -538)
-rotation = 3.14159
+position = Vector2(-350, -539)
 
 [node name="Alien3" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(39, -537)
-rotation = 3.14159
+position = Vector2(32, -538)
 
 [node name="Alien4" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-216, -537)
-rotation = 3.14159
+position = Vector2(-223, -538)
 
 [node name="Alien5" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-409, -475)
-rotation = 3.14159
+position = Vector2(-416, -476)
 
 [node name="Alien6" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-473, -532)
-rotation = 3.14159
+position = Vector2(-480, -533)
 
 [node name="Alien7" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(164, -534)
-rotation = 3.14159
+position = Vector2(157, -535)
 
 [node name="Alien8" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(294, -533)
-rotation = 3.14159
+position = Vector2(287, -534)
 
 [node name="Alien9" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(357, -474)
-rotation = 3.14159
+position = Vector2(350, -475)
 
 [node name="Alien10" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(547, -535)
-rotation = 3.14159
+position = Vector2(540, -536)
 
 [node name="Alien11" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-154, -472)
-rotation = 3.14159
+position = Vector2(-161, -473)
 
 [node name="Alien12" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-286, -475)
-rotation = 3.14159
+position = Vector2(-293, -476)
 
 [node name="Alien13" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-28, -470)
-rotation = 3.14159
-
-[node name="Alien14" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(420, -410)
-rotation = 3.14159
-
-[node name="Alien15" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(295, -409)
-rotation = 3.14159
+position = Vector2(-35, -471)
 
 [node name="Alien16" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-536, -472)
-rotation = 3.14159
-
-[node name="Alien17" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(165, -411)
-rotation = 3.14159
+position = Vector2(-536, -469)
 
 [node name="Alien18" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(227, -471)
-rotation = 3.14159
+position = Vector2(220, -472)
 
 [node name="Alien19" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(425, -536)
-rotation = 3.14159
+position = Vector2(418, -537)
 
 [node name="Alien20" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(485, -475)
-rotation = 3.14159
-
-[node name="Alien21" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-91, -408)
-rotation = 3.14159
-
-[node name="Alien22" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-347, -410)
-rotation = 3.14159
-
-[node name="Alien23" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(36, -408)
-rotation = 3.14159
-
-[node name="Alien24" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-218, -409)
-rotation = 3.14159
-
-[node name="Alien25" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(551, -409)
-rotation = 3.14159
-
-[node name="Alien26" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(-467, -412)
-rotation = 3.14159
+position = Vector2(478, -476)
 
 [node name="Alien27" parent="Control" instance=ExtResource("3_p57ef")]
-position = Vector2(103, -473)
-rotation = 3.14159
+position = Vector2(96, -474)
+
+[node name="Alien14" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-88, -815)
+
+[node name="Alien15" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-344, -816)
+
+[node name="Alien17" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(38, -815)
+
+[node name="Alien21" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-217, -815)
+
+[node name="Alien22" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-410, -753)
+
+[node name="Alien23" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-474, -810)
+
+[node name="Alien24" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(163, -812)
+
+[node name="Alien25" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(293, -811)
+
+[node name="Alien26" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(356, -752)
+
+[node name="Alien28" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(546, -813)
+
+[node name="Alien29" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-155, -750)
+
+[node name="Alien30" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-287, -753)
+
+[node name="Alien31" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-29, -748)
+
+[node name="Alien32" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-530, -746)
+
+[node name="Alien33" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(226, -749)
+
+[node name="Alien34" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(424, -814)
+
+[node name="Alien35" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(484, -753)
+
+[node name="Alien36" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(102, -751)
+
+[node name="Alien37" parent="Control" instance=ExtResource("3_p57ef")]
+position = Vector2(-13, -1007)
+scale = Vector2(5.84929, 4.70213)
 
 [node name="Blocks" type="Control" parent="."]
 layout_mode = 3
@@ -152,33 +200,44 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Block" parent="Blocks" instance=ExtResource("4_lbhrr")]
+[node name="Block" parent="Blocks" groups=["blocks"] instance=ExtResource("4_lbhrr")]
 position = Vector2(994, 466)
 scale = Vector2(2.52454, -0.778794)
 
-[node name="Block2" parent="Blocks" instance=ExtResource("4_lbhrr")]
+[node name="Block2" parent="Blocks" groups=["blocks"] instance=ExtResource("4_lbhrr")]
 position = Vector2(413, 467)
 scale = Vector2(2.52454, -0.778794)
 
-[node name="Block3" parent="Blocks" instance=ExtResource("4_lbhrr")]
+[node name="Block3" parent="Blocks" groups=["blocks"] instance=ExtResource("4_lbhrr")]
 position = Vector2(739, 466)
 scale = Vector2(2.52454, -0.778794)
 
-[node name="Block4" parent="Blocks" instance=ExtResource("4_lbhrr")]
+[node name="Block4" parent="Blocks" groups=["blocks"] instance=ExtResource("4_lbhrr")]
 position = Vector2(147, 466)
 scale = Vector2(2.52454, -0.778794)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-379, 68)
+rotation = -1.56012
+scale = Vector2(15.0509, -1.13507)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-18.7528, -311.023)
+shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-17.4245, -1383.08)
+shape = SubResource("RectangleShape2D_lbhrr")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(349, 302)
-rotation = -1.5858
-scale = Vector2(16.1706, 0.980737)
-shape = SubResource("WorldBoundaryShape2D_lbhrr")
+position = Vector2(571, 712)
+shape = SubResource("RectangleShape2D_iywne")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-physics_interpolation_mode = 1
-position = Vector2(751, 346)
-rotation = 1.58147
-scale = Vector2(-15.0509, 1.13507)
-shape = SubResource("WorldBoundaryShape2D_lbhrr")
+[node name="Background" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 1)
+stream = ExtResource("7_u5sy4")
+autoplay = true
+
+[connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]

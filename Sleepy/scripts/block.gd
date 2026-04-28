@@ -21,6 +21,3 @@ func _process(delta: float) -> void:
 
 func kill():
 	queue_free()
-
-
-	

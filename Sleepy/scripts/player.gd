@@ -26,3 +26,9 @@ func fire():
 	var firedBullet = bullet.instantiate()
 	firedBullet.position += Vector2(position.x,self.position.y - 80)
 	get_parent().call_deferred("add_child",firedBullet)
+	$Gunshot.play()
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("alien"):
+		get_tree().change_scene_to_file("res://scenes/over.tscn")
+		
